@@ -1,0 +1,1 @@
+open command.bat to run the code
