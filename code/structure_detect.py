@@ -19,7 +19,7 @@ class Face:
         face_box = self.face_detector(frame, 0)
         if len(face_box) > 0:
             areas = np.array([box.area() for box in face_box])
-            face_box = face_box[np.argmax(areas)]
+            face_box = face_box[int(np.argmax(areas))]
             structure_pts = self.get_points(frame, face_box)
             structure_pts = face_utils.shape_to_np(structure_pts)
             eye_boxes = [structure_pts[self.left_i[0]:self.left_i[1]], structure_pts[self.right_i[0]:self.right_i[1]]]
